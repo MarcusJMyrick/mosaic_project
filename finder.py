@@ -135,7 +135,7 @@ def run_test_case_3(f):
   df = f("sample.png")
   
   if not isinstance(df, pd.DataFrame):
-    print(f"\N{CROSS MARK} Your function must return a DataFrame.")
+    print("\N{CROSS MARK} Your function must return a DataFrame.")
     return
 
 
@@ -165,7 +165,7 @@ def run_test_case_4(findAverageColor):
     print("\u2705 Looks good!")
     print(f"{tada} All tests passed! {tada}")
   else:
-    print(f"\N{CROSS MARK} Dictionary data is incorrect.")
+    print("\N{CROSS MARK} Dictionary data is incorrect.")
 
 
 def run_test_case_6(findAverageColorInRegion):
@@ -236,23 +236,23 @@ def run_test_case_7(findBestTile):
     assert(type(bestMatch) == type(pd.DataFrame())), "findBestMatch must return a DataFrame"
     assert(len(bestMatch) == 1), "findBestMatch must return exactly one best match"
     assert(bestMatch['file'].values[0] == 'test3.png'), "findBestMatch did not return the best match for test (r=0, g=0, b=0)"
-    print(f"\u2705 Test case #1 (r=0, g=0, b=0) passed!")
+    print("\u2705 Test case #1 (r=0, g=0, b=0) passed!")
 
     bestMatch = findBestTile(real_df, 47, 49, 38)
     assert(bestMatch['file'].values[0] == 'test.png'), "findBestMatch did not return the best match for test (r=47, g=49, b=38)"
-    print(f"\u2705 Test case #1 (r=47, g=49, b=38) passed!")
+    print("\u2705 Test case #1 (r=47, g=49, b=38) passed!")
 
     bestMatch = findBestTile(real_df, 54, 49, 38)
     assert(bestMatch['file'].values[0] == 'test.png'), "findBestMatch did not return the best match for test (r=54, g=49, b=38)"
-    print(f"\u2705 Test case #1 (r=54, g=49, b=38) passed!")
+    print("\u2705 Test case #1 (r=54, g=49, b=38) passed!")
 
     bestMatch = findBestTile(real_df, 54, 49, 52)
     assert(bestMatch['file'].values[0] == 'test2.png'), "findBestMatch did not return the best match for test (r=54, g=49, b=52)"
-    print(f"\u2705 Test case #1 (r=54, g=49, b=52) passed!")
+    print("\u2705 Test case #1 (r=54, g=49, b=52) passed!")
 
     bestMatch = findBestTile(real_df, -100, -100, -100)
     assert(bestMatch['file'].values[0] == 'test3.png'), "findBestMatch did not return the best match for test (r=-100, g=-100, b=-100)"
-    print(f"\u2705 Test case #1 (r=-100, g=-100, b=-100) passed!")
+    print("\u2705 Test case #1 (r=-100, g=-100, b=-100) passed!")
 
     print(f"{tada} All tests passed! {tada}")
 
