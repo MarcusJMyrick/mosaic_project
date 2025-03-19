@@ -1,5 +1,6 @@
 import pandas as pd
 from PIL import Image
+import secrets
 
 def loadImage(fileName, resize=False, format="RGB"):
   # Open the image using the PIL library
@@ -263,12 +264,11 @@ def run_test_case_7(findBestTile):
 
 
 def createImageDataFrame(width, height):
-  import random
 
   data = []
   for x in range(width):
     for y in range(height):
-      data.append( {"x": x, "y": y, "r": random.randint(0, 255), "g": random.randint(0, 255), "b": random.randint(0, 255)} )
+      data.append( {"x": x, "y": y, "r": secrets.SystemRandom().randint(0, 255), "g": secrets.SystemRandom().randint(0, 255), "b": secrets.SystemRandom().randint(0, 255)} )
   
   return pd.DataFrame(data)
 
